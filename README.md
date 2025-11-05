@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket - Prerequisites and Installation</h1>
+<h1>osTicket - Building a Helpdesk with IIS, PHP, and MySQL</h1>
 osTicket is a widely-used open-source support ticketing system that streamlines customer service by routing inquiries from email, web forms, and phone calls into a simple, multi-user web-based platform, enabling agents to efficiently track, prioritize, and resolve issues while automating workflows like ticket assignment and notifications. 
 </p>
 Ticketing systems, in general, are essential software tools for help desks and IT support teams, functioning as centralized repositories to log user requests, categorize problems, assign tasks to responders, monitor progress, and maintain detailed audit trails—ultimately improving response times, reducing email clutter, and enhancing overall service quality in enterprise environments. 
