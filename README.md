@@ -42,4 +42,30 @@ This Azure project focuses on deploying and configuring osTicket on a virtual ma
 - Step 14 - Complete installation
 
 <h2>Step 1 - Create a Virtual Machine </h2>
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/16e18249-cb5b-4444-b89f-41280792bc93" /> </p>
+
+This project begins by creating a Windows 11 Pro virtual machine inside Microsoft Azure. </p>
+
+
 For a detailed explanation of creating Virtual Machines, please visit the project [Creating Virtual Machines in Azure Portal](https://github.com/tylergehm/vm)
+
+<img width="1487" height="538" alt="image" src="https://github.com/user-attachments/assets/e6fe8c8c-0536-4ad1-a573-b9b150f88322" /> </p>
+<img width="542" height="303" alt="image" src="https://github.com/user-attachments/assets/d0fdebd6-ccbb-4733-9bd2-6889ea126e1b" /> </p>
+
+After the VM has been created, the Public IP address will be used to log into the VM using Remote Desktop Connection </p>
+
+Step 2 - Download Os Ticket installation files
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/67f016c5-fa53-4338-a29c-2ad76eae61d7" /> </p>
+
+Once inside the Windows 11 VM, a zipfile containing all the installation files was opened. </p>
+
+Here are the links to download all files used for the osTicket installation process: </p>
+
+  - [osTicket](https://osticket.com/download/)
+  - [HeidiSQL](https://www.heidisql.com/download.php)
+  - [MySQL](https://www.mysql.com/downloads/)
+  - [PHP](https://www.php.net/releases/index.php)
+  - [PHP Manager for IIS](https://www.iis.net/downloads/community/2018/05/php-manager-150-for-iis-10)
+  - [IIS URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
+  - [Visual Studio C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version)
