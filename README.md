@@ -289,11 +289,62 @@ Next, check the box next to "Full Control" then click "OK". This will give every
 
 Everyone now has full control. Click "Apply" then "OK". </p>
 
+<h2>Step 14 - Set up osTicket in web browser</h2>
+
 <img width="730" height="885" alt="image" src="https://github.com/user-attachments/assets/b7dfff47-aa14-4e16-a74b-17972fbaed41" /> </p>
 
 Return to the osTicket Installer and select "Continue". </p>
 
-<h2>Step 14 - Set up osTicket in web browser</h2>
+<img width="675" height="887" alt="image" src="https://github.com/user-attachments/assets/a84a2251-5b57-47ad-85f8-f6980f7c251b" /> </p>
+
+Now the form for osTicket Installation is filled out. This is where the Helpdesk name and e-mail address is configured. This is also where the admin is configured. </p>
+
+Now the Database Settings must be configured. Before the details are entered, the database must be installed and set up. </p>
+
+<h2>Step 15 - Install HeidiSQL</h2>
+
+<img width="691" height="565" alt="image" src="https://github.com/user-attachments/assets/26ca53f3-c3ae-4ec2-8d56-bc6e6bb59b6d" /> </p>
+
+To begin, HeidiSQL must be installed. HeidiSQL is a GUI tool that lets you connect to MySQL, create the osTicket database, set up a user/password, and verify it’s ready before entering those details in the installer.</p>
+
+<img width="851" height="596" alt="image" src="https://github.com/user-attachments/assets/00a77831-2a06-40c9-8663-80d10b21ec30" /> </p>
+
+After installing HeidiSQL, click "New" and enter in the username and password that was established while installing MySQL. </p>
+
+<img width="1159" height="738" alt="image" src="https://github.com/user-attachments/assets/07f6f5c1-36a1-4b80-87bb-08c72027bae0" /> </p>
+
+Once the connection to the database has been established, right-click on "Unnamed". Then go to "Create new" and click on "Database". </p>
+
+<img width="394" height="317" alt="image" src="https://github.com/user-attachments/assets/fc1eee7f-3070-4e04-bfb8-1cd946f74553" /> </p>
+
+Name the database and click "OK". </p>
+
+<h2>Step 16 - Complete Installation</h2>
+
+<img width="605" height="461" alt="image" src="https://github.com/user-attachments/assets/f1ffd350-a1a6-41e5-ad88-95711d24d4b7" /> </p>
+
+Return to osTicket installer and fill out the database information forms. Then click "Install Now". </p>
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/bef536a5-905e-40e6-ba04-8bd247c7a75c" /> </p>
+
+<img width="1913" height="1013" alt="image" src="https://github.com/user-attachments/assets/92f055fb-cb55-422b-a5fb-6183ef7f5b57" /> </p>
+
+
+osTicket has been succesfully installed! </p>
+
+<h2>Conclusion</h2>
+This Azure-based project successfully deployed a fully functional osTicket help desk system on a Windows 11 VM by configuring IIS with CGI, installing PHP and MySQL, enabling required extensions, and securing configuration files—transforming a basic virtual machine into a professional ticketing platform that centralizes support requests, automates workflows, and improves response efficiency for IT and customer service teams. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
