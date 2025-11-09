@@ -35,12 +35,13 @@ This Azure project focuses on deploying and configuring osTicket on a virtual ma
 - Step 7 - Install Microsoft Visual Studio C++ Redistributable
 - Step 8 - Install MySQL
 - Step 9 - Register PHP from within IIS
-- Step 10 - Install OsTicket
+- Step 10 - Install osTicket
 - Step 11 - Enable extensions
-- Step 12 - Assign permissions
-- Step 13 - Set up OsTicket in web browser
-- Step 14 - Install HeidiSQL
-- Step 15 - Complete installation
+- Step 12 - Rename ost-config.php
+- Step 13 - Assign permissions
+- Step 14 - Set up osTicket in web browser
+- Step 15 - Install HeidiSQL
+- Step 16 - Complete installation
 
 <h2>Step 1 - Create a Virtual Machine </h2>
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/16e18249-cb5b-4444-b89f-41280792bc93" /> </p>
@@ -191,7 +192,119 @@ The PHP-cgi file is now linked. </p>
 
 <img width="1417" height="725" alt="image" src="https://github.com/user-attachments/assets/730f921e-e1a6-4d8d-95c4-a02a8425f05a" /> </p>
 
-Next, click on 
+Next, click on "osticket-vmd (osticket-vmd\)" inside the PHP Manager. Under actions, on the right side, click on "Stop" under Manage Server. Once IIS has stopped, click "Start". </p>
+
+Stopping and restarting IIS applies the new PHP registration, reloads php-cgi.exe, and ensures IIS uses the correct PHP version. </p>
+
+<h2>Step 10 - Install osTicket</h2>
+
+<img width="1410" height="733" alt="image" src="https://github.com/user-attachments/assets/bfe3034b-ae1f-40d7-a3fc-332a9718f577" />
+
+Now osTicket will be installed. To begin, extract the osTicket folder from it's zip file. </p>
+
+<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/3cb4d771-0834-4032-8c5e-f0b3ad602ead" /> </p>
+
+Once extracted, the "upload" folder is going to be moved into C:\inetpub\wwwroot folder. </p>
+
+<img width="1394" height="736" alt="image" src="https://github.com/user-attachments/assets/4ff9d7e4-232a-4784-a77b-785d04e6ff11" /> </p>
+
+Once the "upload" folder has been moved, it is renamed "osTicket" inside the C:\inetpub\wwwroot folder. </p>
+This is placing osTicket's web files (the upload folder) into IIS's default web root (C:\inetpub\wwwroot\osTicket) so the server can access them via http://localhost/osTicket. </p>
+
+<img width="1417" height="725" alt="image" src="https://github.com/user-attachments/assets/730f921e-e1a6-4d8d-95c4-a02a8425f05a" /> </p>
+
+Return to IIS Manager and Stop then Start the IIS Server again. Restarting IIS ensures the site loads fresh and is ready for the browser-based setup.</p>
+
+<img width="1418" height="727" alt="image" src="https://github.com/user-attachments/assets/b9b3ebfa-951f-4177-b447-535fe9c9e929" />
+
+Click the drop-down arrow next to "osticket-vmd" then continue to expand the folders Sites > Default Website > then click on osTicket. On the right side, click "Browse*:80 (http)" under Manage Folder. </p>
+
+*Browse :80 (http) opens your default browser to http://localhost/osTicket (port 80) so you can start the web-based osTicket installer. It tests that IIS is serving the site correctly. </p>
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/486fdc83-39f5-4e73-af70-767909357028" /> </p>
+
+The osTicket installer has correctly loaded. Notice the red Xs that indicate multiple extensions are not open. The next step will correct this and enable the extensions required for this project. </p>
+
+<img width="1414" height="728" alt="image" src="https://github.com/user-attachments/assets/0183250a-c9d5-4459-99cd-ce2ee43ba822" /> </p>
+
+Return to the IIS Manager and open PHP Manager in the osTicket folder. </p>
+
+<img width="1414" height="729" alt="image" src="https://github.com/user-attachments/assets/a4e370c7-0dc0-4659-a324-895867bdd45f" /> </p>
+
+Click on the link "Enable or disable an extension". </p>
+
+<img width="1415" height="727" alt="image" src="https://github.com/user-attachments/assets/023b5f85-dc15-4c3b-8a03-e9c2d62b76a8" />
+
+
+Enable the extensions "php_imap.dll", "php_inti.dll", "php_opcache.dll". This is done by clicking on each extension, the clicking "Enable" on the right side of the PHP Manager. </p>
+
+  - php_imap.dll: Lets osTicket fetch emails from mail servers to auto-create tickets.
+  - php_intl.dll: Handles language formatting, time zones, and translations.
+  - php_opcache.dll: Speeds up PHP by caching compiled scripts in memory. </p>
+
+<img width="1005" height="883" alt="image" src="https://github.com/user-attachments/assets/8b1430ed-6c22-4c57-a8fb-a0e7537cb528" /> </p>
+
+Refreshing the osTicket Installer web page displays that "PHP IMAP Extension" and "Intl Extension" have been enabled. </p>
+
+<h2>Step 12 - Rename ost-config.php</h2>
+
+In this step, a file on the harddrive that osTicket uses to make configurations will be renamed. </p>
+
+<img width="1406" height="740" alt="image" src="https://github.com/user-attachments/assets/a7a906b6-60d7-4c93-97ee-9ff439a19a3a" /> </p>
+
+Return to the C:\inetpub\wwwroot folder and open osTicket folder. </p>
+
+<img width="1394" height="736" alt="image" src="https://github.com/user-attachments/assets/bf030c80-d15c-40ed-adfc-d921020d704f" /> <p>
+
+Inside the osTicket folder, open the folder "include" and find the file "ost-sampleconfig.php". </p>
+
+<img width="778" height="58" alt="image" src="https://github.com/user-attachments/assets/3d4f5224-761a-480c-957b-6b8df21dbdef" /> </p>
+
+Rename the file "ost-config.php" </p>
+
+<h2>Step 13 - Assign permissions</h2>
+
+<img width="1398" height="736" alt="image" src="https://github.com/user-attachments/assets/3966b08a-e384-4957-8a98-39f60a020b5b" />
+
+
+After renaming the file, right-click on it and click on "Properties". Once inside Properties, click on the "Security" tab. Next, click "Advanced". </p>
+
+<img width="1005" height="640" alt="image" src="https://github.com/user-attachments/assets/9e92bf5e-046f-442c-a329-29a86672ed51" /> </p>
+
+Inside Advanced Security settings for ost-config.php, click on "Disable inheritance" then click "Remove all inherited permissions from this object". This will remove all permissions on this file. </p>
+
+<img width="1554" height="933" alt="image" src="https://github.com/user-attachments/assets/56db6967-aa5e-428d-9b94-86465e9be18a" /> </p>
+
+After the permissions have been removed, click "Add". Inside Permission Entry for osg-config.php box, click the link "Select a principal". A principal is the user or service account that runs PHP under IIS. </p>
+
+<img width="608" height="309" alt="image" src="https://github.com/user-attachments/assets/39fed80f-8610-4f80-b9c2-fa54800d9e2a" /> </p>
+
+In the Select User or Group box, type "Everyone" then click "OK". </p>
+
+<img width="1207" height="717" alt="image" src="https://github.com/user-attachments/assets/58acb2fb-3f60-44cb-a4ac-2e9845792bea" /> </p>
+
+Next, check the box next to "Full Control" then click "OK". This will give everyone full access; this is not good to do in a real-life scenario for security reasons, but for the lab this makes sure everything is working fluidly. </p>
+
+<img width="1022" height="640" alt="image" src="https://github.com/user-attachments/assets/0c2fcae7-88ce-413a-92fd-162abbb6b05c" /> </p>
+
+Everyone now has full control. Click "Apply" then "OK". </p>
+
+<img width="730" height="885" alt="image" src="https://github.com/user-attachments/assets/b7dfff47-aa14-4e16-a74b-17972fbaed41" /> </p>
+
+Return to the osTicket Installer and select "Continue". </p>
+
+<h2>Step 14 - Set up osTicket in web browser</h2>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
