@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket - Building a Helpdesk with IIS, PHP, and MySQL</h1>
+<h1>osTicket - Building  osTicket Support Ticketing System from scratch</h1>
 osTicket is a widely-used open-source support ticketing system that streamlines customer service by routing inquiries from email, web forms, and phone calls into a simple, multi-user web-based platform, enabling agents to efficiently track, prioritize, and resolve issues while automating workflows like ticket assignment and notifications. 
 </p>
 Ticketing systems, in general, are essential software tools for help desks and IT support teams, functioning as centralized repositories to log user requests, categorize problems, assign tasks to responders, monitor progress, and maintain detailed audit trails—ultimately improving response times, reducing email clutter, and enhancing overall service quality in enterprise environments. 
@@ -62,10 +62,16 @@ Once inside the Windows 11 VM, a zipfile containing all the installation files w
 
 Here are the links to download all files used for the osTicket installation process: </p>
 
-  - [osTicket](https://osticket.com/download/)
-  - [HeidiSQL](https://www.heidisql.com/download.php)
-  - [MySQL](https://www.mysql.com/downloads/)
-  - [PHP](https://www.php.net/releases/index.php)
-  - [PHP Manager for IIS](https://www.iis.net/downloads/community/2018/05/php-manager-150-for-iis-10)
-  - [IIS URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
-  - [Visual Studio C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version)
+  - [osTicket](https://osticket.com/download/) - The actual help-desk application files (PHP code, templates, and installer) you upload to your web server.
+  - [HeidiSQL](https://www.heidisql.com/download.php) - A lightweight GUI tool to connect to MySQL, create the osTicket database, and manage its schema.
+  - [MySQL](https://www.mysql.com/downloads/) - The database server that stores all tickets, users, settings, and attachments.
+  - [PHP](https://www.php.net/releases/index.php) - The scripting language interpreter that runs osTicket’s backend logic on the server.
+  - [PHP Manager for IIS](https://www.iis.net/downloads/community/2018/05/php-manager-150-for-iis-10) - A simple IIS plugin to register PHP, switch versions, and enable required extensions like mysqli and gd.
+  - [IIS URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) - An IIS module that translates clean URLs (e.g., /open) into the actual PHP scripts
+  - [Visual Studio C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version) - System-level runtime libraries required for PHP and MySQL to execute properly on Windows. </p>
+
+osTicket is a PHP help-desk application that needs a web server, PHP runtime, and MySQL database to function. On Windows with IIS, the listed downloads provide every required component to build a complete, working environment from scratch. </p>
+
+<h2>Step 3 - Enable IIS in Windows with CGI</h2>
+
+
