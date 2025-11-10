@@ -11,7 +11,7 @@ This Azure project focuses on deploying and configuring osTicket on a virtual ma
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: osTicket - Building osTicket Support Ticketing System from scratch]([https://www.youtube.com](https://youtu.be/3rf6qRmcQwg))
+- ### [YouTube: osTicket - Building osTicket Support Ticketing System from scratch](https://youtu.be/3rf6qRmcQwg)
 
 <h2>Environments and Technologies Used</h2>
 
